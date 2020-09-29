@@ -59,6 +59,7 @@ void Merge(int* a, int low, int mid, int high)
             j++ ;
             k++ ;
         }
+    }
         //这个过程结束的时候，势必会有第一部分或者第二部分的元素剩下，那么将剩下的元素添进tmpa中去：
         while (i <= mid)
         {
@@ -80,7 +81,6 @@ void Merge(int* a, int low, int mid, int high)
         //释放临时数组的内存
         free(tmpa);
     }
-}
 
 //归并排序：
 void MergeSort(int a[], int low, int high)
