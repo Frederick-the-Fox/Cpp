@@ -3,14 +3,14 @@
 
 using namespace std;
 
-//å®šä¹‰å®¹å™¨ç”¨æ¥å­˜æ”¾ç»“æœè¾“å‡ºåºåˆ—
+//¶¨ÒåÈİÆ÷ÓÃÀ´´æ·Å½á¹ûÊä³öĞòÁĞ
 vector<int>result;
 
-//å‡½æ•°å£°æ˜
+//º¯ÊıÉùÃ÷
 void dfs(int num, int max);
 void PrintOut(vector<int>a);
 
-//mainå‡½æ•°ï¼šè¾“å…¥ã€è¿ç®—ã€è¾“å‡º
+//mainº¯Êı£ºÊäÈë¡¢ÔËËã¡¢Êä³ö
 int main()
 {
     int num = 0;
@@ -20,7 +20,7 @@ int main()
     return 0;
 }
 
-//å®šä¹‰ç»“æœè¾“å‡ºå‡½æ•°printout
+//¶¨Òå½á¹ûÊä³öº¯Êıprintout
 void PrintOut(vector<int>a)
 {
     vector<int>::iterator ai;
@@ -33,11 +33,11 @@ void PrintOut(vector<int>a)
     return ;
 }
 
-//å®šä¹‰æ·±åº¦æœç´¢å‡½æ•°
+//¶¨ÒåÉî¶ÈËÑË÷º¯Êı
 void dfs(int num, int max)
 {
     int nextmax=1;
-    //é€’å½’ç»“æŸæ¡ä»¶
+    //µİ¹é½áÊøÌõ¼ş
     if(!num)
     {
         PrintOut(result);
@@ -47,7 +47,7 @@ void dfs(int num, int max)
     {
         return;
     }
-    //å‡½æ•°ä¸»ä½“
+    //º¯ÊıÖ÷Ìå
     for( nextmax = max; nextmax <= num; nextmax++)
     {
         result.push_back(nextmax);

@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	int n;//æ•°å€¼é‡
+	int n;//ÊýÖµÁ¿
 	int i;
 	cin >> n >> i;
 }
