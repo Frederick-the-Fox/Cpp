@@ -44,30 +44,18 @@ void QuickSort(int low, int high)
         int i = low;
         int j = high;
         //先看j，若data[j]小于等于cmp，就将值赋给data[i]
-        while(j != i)
+        while (i != j)
         {
-            if(data[j] <= cmp)
+            while (j > i && data[j] >= cmp)
             {
-                data[i] = data[j];
-                break;
+                j--;
             }
-            else
-            {
-                j-- ;
-            }
-        }
-        //再看i，如果大于cmp就赋给data[j]
-        while(i != j)
-        {
-            if(data[i] > cmp)
-            {
-                data[j] = data[i];
-                break;
-            }
-            else
+            data[i] = data[j];
+            while(i < j && data[i] <= cmp)
             {
                 i++;
             }
+            data[j] = data[i];
         }
         //当i == j的时候，将cmp赋给data[i]
         data[i] = cmp;
@@ -78,4 +66,3 @@ void QuickSort(int low, int high)
         return;
     }
 }
-
