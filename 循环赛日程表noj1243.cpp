@@ -31,10 +31,15 @@ void gamecal(int k,int m) {
     for(i=k-1;i<k-1+m/2;i++)
     {
         for(j=m/2;j<m;j++)
+        {
             a[i][j]=a[i+m/2][j-m/2];
-    } 
+        }
+    }
     for(i=k-1+m/2;i<k-1+m;i++)
-    {for(j=m/2;j<m;j++)
-    a[i][j]=a[i-m/2][j-m/2];
+    {
+        for(j=m/2;j<m;j++)
+        {
+            a[i][j]=a[i-m/2][j-m/2];
+        }
     } 
 } 

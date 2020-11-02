@@ -1,66 +1,65 @@
-#include<stdio.h>
 #include<iostream>
-#include<vector>
 
 using namespace std;
 
-int dtm = 0;
-int a[10000];
-int b[50000];
+int Binary_search(int left, int right, int key);
 
-int Find(int num, int low, int high);
+int arr[10000];
+int keys[5000];
 
 int main()
 {
-    int n;
+    int n, m;
     int i = 0;
-    int m;
-    
-    // input(n)
+    //第一行输入n
     cin >> n;
-    //input(data)
-    for(i = 0; i < n; i++)
+    //第二行输入n个数字
+    for (i = 0; i < n; i++)
     {
-        cin >> a[i];
+        cin >> arr[i];
     }
-    //input(m)
+    //第三行输入m
     cin >> m;
-    //intput(num)
-    for(i = 0; i < m; i++)
+    //接下来m行输入m个不同的数字
+    for (i = 0; i < m; i++)
     {
-        cin >> b[i];
+        cin >> keys[i];
     }
-    //for(i<m) find(num) output(result)
-    for(i = 0; i < m; i++)
-    {//find(b[i]);
-        if(Find(b[i], 0 , n-1))
+    //二分查找
+    //每一行输出一个结果，Yes或者No
+    for (i = 0; i < m; i++)
+    {
+        if (Binary_search(0, n, keys[i]))
         {
-            cout << "Yes" <<endl;
+            cout << "Yes" << endl;
         }
-        else
-        {
-            cout << "No" <<endl;
+        else{
+            cout << "No" << endl;
         }
     }
     return 0;
-    //return
 }
 
-int Find(int num, int low, int high)
+int Binary_search(int left, int right, int key)
 {
-    if(low == high)
+    int mid = (left + right)/2;
+    if (left >= right)
     {
-        if(a[low] == num)
+        return 0;
+    }
+    else
+    {
+        if (arr[mid] == key)
         {
             return 1;
         }
+        if (key < arr[mid])
+        {
+            return Binary_search(left, mid, key);
+        }
         else
         {
-            return 0;
+            return Binary_search(mid + 1, right, key);
         }
     }
-    int mid;
-    mid = (low + high)/2;
-    return(Find(num, low, mid)||Find(num, (mid + 1), high));
 }
-
